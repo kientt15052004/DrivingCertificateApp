@@ -1,0 +1,45 @@
+﻿<Window x:Class="DrivingCertificateApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrivingCertificateApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStyle="none" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <!-- Header -->
+            <RowDefinition Height="*"/>
+            <!-- Main Content -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <!-- Sidebar -->
+            <ColumnDefinition Width="*"/>
+            <!-- Main Content -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="#2C3E50">
+            <TextBlock Text="Hệ thống quản lý chứng chỉ lái xe" Foreground="White" FontSize="22" 
+                       FontWeight="Bold" FontFamily="Segoe UI" VerticalAlignment="Center" Margin="20,0,0,0"/>
+
+            <Button x:Name="btnProfile" Content="Tài khoản" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                    Width="120" Height="30" Margin="0,0,20,0" Click="BtnProfile_Click"/>
+        </Grid>
+
+        <!-- Sidebar Menu -->
+        <StackPanel Background="#34495E" Width="220" Grid.Row="1">
+            <TextBlock Text="Dashboard" Foreground="White" FontSize="18" FontWeight="Bold" Padding="15"/>
+            <Button x:Name="btnCourses" Content="Quản lý Khóa học" Height="45" Style="{StaticResource SidebarButton}"/>
+            <Button x:Name="btnExams" Content="Quản lý Kỳ thi" Height="45" Style="{StaticResource SidebarButton}"/>
+            <Button x:Name="btnResults" Content="Kết quả và Chứng chỉ" Height="45" Style="{StaticResource SidebarButton}"/>
+            <Button x:Name="btnUsers" Content="Quản lý Người dùng" Height="45" Visibility="Collapsed" Style="{StaticResource SidebarButton}"/>
+            <Button x:Name="btnLogout" Content="Đăng xuất" Height="45" Background="#E74C3C" Foreground="White"/>
+        </StackPanel>
+
+        <!-- Main Content -->
+        <Frame x:Name="MainContent" Grid.Column="1" Grid.Row="1" Margin="10"/>
+    </Grid>
+</Window>
