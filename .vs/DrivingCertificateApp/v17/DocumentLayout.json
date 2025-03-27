@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|d:\\fpt education\\sp25\\1_prn212\\prn_project\\drivingcertificateapp\\views\\userprofile.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|solutionrelative:views\\userprofile.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|d:\\fpt education\\sp25\\1_prn212\\prn_project\\drivingcertificateapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|d:\\fpt education\\sp25\\1_prn212\\prn_project\\drivingcertificateapp\\views\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|solutionrelative:views\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|d:\\fpt education\\sp25\\1_prn212\\prn_project\\drivingcertificateapp\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|solutionrelative:views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|d:\\fpt education\\sp25\\1_prn212\\prn_project\\drivingcertificateapp\\models\\currentsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|solutionrelative:models\\currentsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|d:\\fpt education\\sp25\\1_prn212\\prn_project\\drivingcertificateapp\\views\\userprofile.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|solutionrelative:views\\userprofile.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|d:\\fpt education\\sp25\\1_prn212\\prn_project\\drivingcertificateapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|d:\\fpt education\\sp25\\1_prn212\\prn_project\\drivingcertificateapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08698FA8-5B66-4A96-933D-68DA328E71BF}|DrivingCertificateApp.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CurrentSession.cs",
+              "DocumentMoniker": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Models\\CurrentSession.cs",
+              "RelativeDocumentMoniker": "Models\\CurrentSession.cs",
+              "ToolTip": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Models\\CurrentSession.cs",
+              "RelativeToolTip": "Models\\CurrentSession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T20:11:09.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-19T20:04:20.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserProfile.xaml.cs",
+              "DocumentMoniker": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Views\\UserProfile.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\UserProfile.xaml.cs",
+              "ToolTip": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Views\\UserProfile.xaml.cs",
+              "RelativeToolTip": "Views\\UserProfile.xaml.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAYwDYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T19:52:48.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserProfile.xaml",
+              "DocumentMoniker": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Views\\UserProfile.xaml",
+              "RelativeDocumentMoniker": "Views\\UserProfile.xaml",
+              "ToolTip": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Views\\UserProfile.xaml",
+              "RelativeToolTip": "Views\\UserProfile.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-19T19:50:29.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Views\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\Login.xaml.cs",
+              "ToolTip": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Views\\Login.xaml.cs",
+              "RelativeToolTip": "Views\\Login.xaml.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T18:46:17.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Views\\Login.xaml",
+              "RelativeDocumentMoniker": "Views\\Login.xaml",
+              "ToolTip": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Views\\Login.xaml",
+              "RelativeToolTip": "Views\\Login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-19T18:35:10.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-19T18:05:22.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwCMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T18:05:18.389Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
