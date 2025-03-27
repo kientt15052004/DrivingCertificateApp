@@ -1,0 +1,35 @@
+﻿<Window x:Class="DrivingCertificateApp.Views.RegisterCourse"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrivingCertificateApp.Views"
+        mc:Ignorable="d"
+        Title="RegisterCourse" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Danh sách khóa học" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <ListView x:Name="lvCourses" Grid.Row="1" Margin="0,0,0,10">
+            <ListView.View > 
+                <GridView>
+                    <GridViewColumn Header="Tên khóa học" Width="200" DisplayMemberBinding="{Binding CourseName}"/>
+                    <GridViewColumn Header="Giảng viên" Width="150" DisplayMemberBinding="{Binding TeacherName}"/>
+                    <GridViewColumn Header="Ngày bắt đầu" Width="100" DisplayMemberBinding="{Binding StartDate, StringFormat={}{0:dd/MM/yyyy}}"/>
+                    <GridViewColumn Header="Ngày kết thúc" Width="100" DisplayMemberBinding="{Binding EndDate, StringFormat={}{0:dd/MM/yyyy}}"/>
+                    <GridViewColumn Header="Trạng thái" Width="100" DisplayMemberBinding="{Binding Status}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnRegister" Content="Đăng ký" Width="100" Margin="0,0,10,0" Click="btnRegister_Click"/>
+            <Button x:Name="btnCancel" Content="Hủy" Width="100" Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
