@@ -79,23 +79,18 @@
 
                     <!-- Chữ ký -->
                     <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                        <StackPanel Margin="0,0,50,0">
+                        <StackPanel>
                             <TextBlock Text="Người cấp chứng chỉ" 
                                        FontSize="16" 
                                        Foreground="Black" 
                                        HorizontalAlignment="Center"/>
-                            <TextBlock Text="__________________" 
-                                       FontSize="16" 
-                                       Foreground="Black" 
-                                       HorizontalAlignment="Center" 
-                                       Margin="0,10,0,0"/>
-                        </StackPanel>
-                        <StackPanel>
-                            <TextBlock Text="Học sinh" 
-                                       FontSize="16" 
-                                       Foreground="Black" 
-                                       HorizontalAlignment="Center"/>
-                            <TextBlock Text="__________________" 
+                            <TextBlock Text="Giám đốc" 
+                                        FontSize="20" 
+                                        Foreground="Black" 
+                                        FontWeight="Bold"
+                                        HorizontalAlignment="Center"/>
+
+                            <TextBlock Text="________________________" 
                                        FontSize="16" 
                                        Foreground="Black" 
                                        HorizontalAlignment="Center" 

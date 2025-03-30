@@ -25,6 +25,10 @@ public partial class User
 
     public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
 
+    public virtual ICollection<Messenger> MessengerReceivers { get; set; } = new List<Messenger>();
+
+    public virtual ICollection<Messenger> MessengerSenders { get; set; } = new List<Messenger>();
+
     public virtual ICollection<Notification> Notifications { get; set; } = new List<Notification>();
 
     public virtual ICollection<Registration> Registrations { get; set; } = new List<Registration>();

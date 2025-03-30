@@ -60,25 +60,53 @@ namespace DrivingCertificateApp.Views
             string school = txtSchool.Text.Trim();
             string phone = txtPhone.Text.Trim();
 
-            // Kiểm tra dữ liệu bắt buộc
-            if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(email) ||
-                string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword) ||
+            // Validate dữ liệu
+            if (string.IsNullOrEmpty(fullName) && string.IsNullOrEmpty(email) &&
+                string.IsNullOrEmpty(password) && string.IsNullOrEmpty(confirmPassword) &&
                 role == "Role")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin cơ bản và chọn vai trò!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
+            } else if  (string.IsNullOrEmpty(fullName))
+                    {
+                MessageBox.Show("Vui lòng nhập họ và tên của bạn!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
-
+            else if (string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Vui lòng nhập email của bạn!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            else if (!email.Contains("@email.com"))
+            {
+                MessageBox.Show("Email phải chứa @email.com !", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            else if (string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            else if (string.IsNullOrEmpty(confirmPassword))
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu xác nhận!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             if (password != confirmPassword)
             {
                 MessageBox.Show("Mật khẩu xác nhận không khớp!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
-            }
-
-            // Kiểm tra required cho Student
-            if (role == "Student" && (string.IsNullOrEmpty(className) || string.IsNullOrEmpty(school)))
+            } if (role == "Role")
+            {
+                MessageBox.Show("Vui lòng chọn vai trò của bạn!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            } if (role == "Student" && (string.IsNullOrEmpty(className) || string.IsNullOrEmpty(school)))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin Lớp và Trường khi chọn vai trò Student!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            } if (string.IsNullOrEmpty(phone))
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại của bạn!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 

@@ -32,7 +32,7 @@ namespace DrivingCertificateApp.Views
         {
             try
             {
-                // Lấy danh sách kết quả thi của học sinh hiện tại với PassStatus = 1
+                // Lấy danh sách kết quả thi của học sinh hiện tại với PassStatus = 1(true)
                 var passedResults = _context.Results
                     .Include(r => r.Exam)
                     .ThenInclude(e => e.Course)
@@ -41,7 +41,7 @@ namespace DrivingCertificateApp.Views
 
                 if (passedResults.Any())
                 {
-                    // Lấy kết quả đầu tiên (hoặc bạn có thể tạo giao diện để chọn khóa học)
+                    // Lấy kết quả đầu tiên
                     var result = passedResults.First();
 
                     // Gán danh sách vào ComboBox

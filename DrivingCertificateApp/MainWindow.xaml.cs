@@ -1,17 +1,15 @@
-﻿using System.Collections.Specialized;
+﻿
 using System.ComponentModel;
 using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+
 using System.Windows.Input;
-using System.Windows.Media;
+
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WebSocketSharp.Server;
 using DrivingCertificateApp.Models;
 using DrivingCertificateApp.Views;
+using System.Windows.Threading;
 
 namespace DrivingCertificateApp
 {
@@ -23,14 +21,56 @@ namespace DrivingCertificateApp
         private Visibility _stuVisibility;
         private Visibility _teacherVisibility;
 
+        private bool isImage1 = true;
+        private DispatcherTimer timer;
+
+        private WebSocketServer _wssv;
+
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = this; // Đảm bảo rằng DataContext của cửa sổ là chính nó
+            DataContext = this; 
             StuVisibility = Visibility.Collapsed;
             TeacherVisibility = Visibility.Collapsed;
             checkRole();
+            DisplayWelcomeMessage();
 
+            StartWebSocketServer();
+
+            // Thiết lập timer để tự động thay đổi hình ảnh mỗi 5 giây
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(5);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            btnChangeBackground_Click(null, null);
+        }
+
+        private void btnChangeBackground_Click(object sender, RoutedEventArgs e)
+        {
+            if (isImage1)
+            {
+                BackgroundImage.ImageSource = new BitmapImage(new Uri("D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Image\\car4.jpg"));
+                isImage1 = false;
+            }
+            else
+            {
+                BackgroundImage.ImageSource = new BitmapImage(new Uri("D:\\FPT Education\\SP25\\1_PRN212\\PRN_PROJECT\\DrivingCertificateApp\\Image\\car2.jpg"));
+                isImage1 = true;
+            }
+        }
+        private void DisplayWelcomeMessage()
+        {
+            if (!string.IsNullOrEmpty(CurrentSession.FullName))
+            {
+                txtWelcomeUser.Text = $"Hello {CurrentSession.FullName} !";
+            }
+            else
+            {
+                txtWelcomeUser.Text = "Hello Guest";
+            }
         }
         public void checkRole()
         {
@@ -97,19 +137,72 @@ namespace DrivingCertificateApp
         private void btnViewCertificate_Click(object sender, RoutedEventArgs e)
         {
             var certificateWindow = new StudentCertificate();
-            certificateWindow.Show();
+            certificateWindow.ShowDialog();
+        }
+
+        //lâm tùng-------------------------------------
+        private void TbCourse_Click(object sender, MouseButtonEventArgs e)
+        {
+            CourseManager CourseManagerWindow = new CourseManager();
+            CourseManagerWindow.ShowDialog();
         }
         private void TbStudent_Click(object sender, MouseButtonEventArgs e)
         {
-            //StudentManager StudentManagerWindow = new StudentManager();
-            //StudentManagerWindow.ShowDialog();
+            StudentManager StudentManagerWindow = new StudentManager();
+            StudentManagerWindow.ShowDialog();
         }
 
         private void TbScore_Click(object sender, MouseButtonEventArgs e)
         {
-        //    ScoreManager ScoreManagerWindow = new ScoreManager();
-        //    ScoreManagerWindow.ShowDialog();
+            ScoreManager ScoreManagerWindow = new ScoreManager();
+            ScoreManagerWindow.ShowDialog();
         }
+
+
+        //lâm tùng-------------------------------------
+
+
+        //tuấn
+        private void TextBlock_ChatHs(object sender, MouseButtonEventArgs e)
+        {
+
+            ChatArea.Visibility = Visibility.Visible;
+            MainFrame.Visibility = Visibility.Collapsed;
+        }
+        private void TextBlock_ChatGv(object sender, MouseButtonEventArgs e)
+        {
+
+            ChatArea.Visibility = Visibility.Visible;
+            MainFrame.Visibility = Visibility.Collapsed;
+        }
+
+        private void StartWebSocketServer()
+        {
+            _wssv = new WebSocketServer(); // Initialize the WebSocket server
+            try
+            {
+                _wssv.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi khởi động WebSocket server: {ex.Message}");
+            }
+        }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (_wssv != null)
+            {
+                _wssv.Stop();
+            }
+        }
+        private void btnMockTest_Click(object sender, MouseButtonEventArgs e)
+        {
+            var mockTestWindow = new MockTest();
+            mockTestWindow.ShowDialog();
+        }
+        //tuan
+
+
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
@@ -122,6 +215,19 @@ namespace DrivingCertificateApp
 
             // Đóng form MainWindow
             this.Close();
+        }
+
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void ButtonHome_Click(object sender, RoutedEventArgs e)
+        {
+            //về trang home, ẩn chat
+            ChatArea.Visibility = Visibility.Collapsed;
+            MainFrame.Visibility = Visibility.Visible;
+
         }
     }
 }

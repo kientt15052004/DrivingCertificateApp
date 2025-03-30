@@ -16,7 +16,6 @@ using Microsoft.EntityFrameworkCore;
 using DrivingCertificateApp.Converters;
 
 
-//sửa pending, sửa ngày tháng sao cho hợp lệ, sửa validate dữ liệu(login logout acc infor)
 
 namespace DrivingCertificateApp.Views
 {
@@ -48,8 +47,10 @@ namespace DrivingCertificateApp.Views
             try
             {
                 // Lấy danh sách khóa học và thông tin giảng viên
+                var now = DateOnly.FromDateTime(DateTime.Now);
                 var courses = _context.Courses
                     .Include(c => c.Teacher)
+                    .Where(c => c.StartDate > now)
                     .ToList();
 
                 // Lấy danh sách đăng ký của học sinh hiện tại
@@ -65,8 +66,8 @@ namespace DrivingCertificateApp.Views
                     TeacherName = c.Teacher?.FullName ?? "Không có giảng viên",
                     StartDate = c.StartDate,
                     EndDate = c.EndDate,
-                    // Lấy trạng thái từ bảng Registrations, nếu không có thì để trống
-                    Status = registrations.FirstOrDefault(r => r.CourseId == c.CourseId)?.Status ?? "Pending"
+                    // Lấy trạng thái từ bảng Registrations
+                    Status = registrations.FirstOrDefault(r => r.CourseId == c.CourseId)?.Status ?? "Waiting"
                 }).ToList();
 
                 lvCourses.ItemsSource = courseWithStatusList;
@@ -118,7 +119,6 @@ namespace DrivingCertificateApp.Views
 
             MessageBox.Show("Đăng ký thành công! Vui lòng chờ giảng viên duyệt.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             LoadCourses(); // Làm mới danh sách sau khi đăng ký
-            this.Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

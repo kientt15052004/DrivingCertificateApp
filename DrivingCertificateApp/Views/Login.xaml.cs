@@ -19,12 +19,22 @@ namespace DrivingCertificateApp.Views
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             string email = txtEmail.Text.Trim();
-            string password = txtPassword.Password.Trim(); // PasswordBox lấy mật khẩu
+            string password = txtPassword.Password.Trim();
 
             // Kiểm tra dữ liệu đầu vào
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(email) )
             {
-                lblError.Text = "Vui lòng nhập đầy đủ thông tin.";
+                lblError.Text = "Vui lòng nhập email hợp lệ!";
+                lblError.Visibility = Visibility.Visible;
+                return;
+            } else if (string.IsNullOrEmpty(password))
+            {
+                lblError.Text = "Vui lòng nhập mật khẩu hợp lệ!";
+                lblError.Visibility = Visibility.Visible;
+                return;
+            } else if (!email.Contains("@email.com"))
+            {
+                lblError.Text = "Email phải chứa '@email.com'!";
                 lblError.Visibility = Visibility.Visible;
                 return;
             }

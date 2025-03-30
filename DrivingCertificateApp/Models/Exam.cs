@@ -11,7 +11,7 @@ public partial class Exam
 
     public DateOnly Date { get; set; }
 
-    public string Room { get; set; } = null!;
+    public string? Room { get; set; }
 
     public virtual Course Course { get; set; } = null!;
 

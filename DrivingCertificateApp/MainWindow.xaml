@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DrivingCertificateApp"
+        xmlns:views="clr-namespace:DrivingCertificateApp.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" WindowStyle="none" WindowStartupLocation="CenterScreen">
-    <Grid Background="#fff">
+        Title="MainWindow" Height="600" Width="900" WindowStyle="none" WindowStartupLocation="CenterScreen">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
@@ -16,16 +17,18 @@
         <Border Background="#292c3b" Grid.Column="0">
             <StackPanel VerticalAlignment="Stretch">
                 <!-- Nút Hamburger -->
-                <StackPanel Orientation="Horizontal" Margin="10">
-                    <Button Content="☰" Width="30" Height="30" Background="Transparent" Foreground="White" BorderBrush="Transparent" FontSize="16" />
+                <StackPanel Orientation="Horizontal" Margin="0">
+
+                    <Button Content="☰" Width="30" Height="30" Background="Transparent" Foreground="White" BorderBrush="Transparent" FontSize="16" Click="ButtonHome_Click" />
+
                 </StackPanel>
 
                 <!-- Menu điều hướng -->
-                <ListBox x:Name="NavigationMenu" Background="Transparent" BorderBrush="Transparent" Foreground="White" Margin="10" Height="400">
+                <ListBox x:Name="NavigationMenu" Background="Transparent" BorderBrush="Transparent" Foreground="White" Margin="10" Height="481">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="16" Margin="0,0,10,0"/>
+                                <TextBlock FontSize="16" Margin="0,0,0,0"/>
                                 <TextBlock FontSize="14"/>
                             </StackPanel>
                         </DataTemplate>
@@ -49,6 +52,12 @@
                     <!-- Các mục trong menu của học sinh-->
                     <ListBoxItem Visibility="{Binding StuVisibility}">
                         <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="txtWelcomeUser" Foreground="White" FontSize="14" FontWeight="Bold" FontFamily="Segoe UI" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,30,0"/>
+                        </StackPanel>
+                    </ListBoxItem>
+
+                    <ListBoxItem Visibility="{Binding StuVisibility}">
+                        <StackPanel Orientation="Horizontal">
                             <TextBlock Text="👤" FontSize="16" Margin="0,0,10,0"/>
                             <TextBlock x:Name="btnProfile" Text="Thông tin cá nhân" FontSize="14" MouseLeftButtonDown="BtnProfile_Click"/>
                         </StackPanel>
@@ -62,6 +71,12 @@
                     </ListBoxItem>
                     <ListBoxItem Visibility="{Binding StuVisibility}">
                         <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="📝" FontSize="16" Margin="0,0,10,0"/>
+                            <TextBlock Text="Thi thử lái xe A1" FontSize="14" MouseLeftButtonDown="btnMockTest_Click"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Visibility="{Binding StuVisibility}">
+                        <StackPanel Orientation="Horizontal">
                             <TextBlock Text="🎓" FontSize="16" Margin="0,0,10,0"/>
                             <TextBlock x:Name="btnViewCertificate" Text="Chứng chỉ" FontSize="14" MouseLeftButtonDown="btnViewCertificate_Click"/>
                         </StackPanel>
@@ -70,7 +85,7 @@
                     <ListBoxItem Visibility="{Binding StuVisibility}">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="💬" FontSize="16" Margin="0,0,10,0"/>
-                            <TextBlock Text="Chat với giáo viên" FontSize="14"/>
+                            <TextBlock Text="Chat với giáo viên" FontSize="14" MouseLeftButtonDown="TextBlock_ChatHs"/>
                         </StackPanel>
                     </ListBoxItem>
                     <!-- Các mục trong menu của Giáo Viên-->
@@ -86,18 +101,17 @@
                             <TextBlock Text="Thông báo" FontSize="14" MouseLeftButtonDown="btnTeacherDashboard_Click"/>
                         </StackPanel>
                     </ListBoxItem>
-                    <Button Visibility="{Binding TeacherVisibility}" Content="abcsadsadasd" ></Button>
 
                     <ListBoxItem Visibility="{Binding TeacherVisibility}">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="📅" FontSize="16" Margin="0,0,10,0"/>
-                            <TextBlock Text="Quản lý khóa học" FontSize="14"/>
+                            <TextBlock Text="Quản lý khóa học" FontSize="14" MouseLeftButtonDown="TbCourse_Click"/>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Visibility="{Binding TeacherVisibility}">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="🎓" FontSize="16" Margin="0,0,10,0"/>
-                            <TextBlock Text="Quản lý học sinh" FontSize="14"/>
+                            <TextBlock Text="Quản lý học sinh" FontSize="14" MouseLeftButtonDown="TbStudent_Click"/>
                         </StackPanel>
                     </ListBoxItem>
 
@@ -107,6 +121,12 @@
                             <TextBlock Text="Kết quả học tập" FontSize="14" MouseLeftButtonDown="TbScore_Click"/>
                         </StackPanel>
                     </ListBoxItem>
+                    <ListBoxItem Visibility="{Binding TeacherVisibility}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="💬" FontSize="16" Margin="0,0,10,0"/>
+                            <TextBlock Text="Chat với giáo viên" FontSize="14" MouseLeftButtonDown="TextBlock_ChatGv"/>
+                        </StackPanel>
+                    </ListBoxItem>
                 </ListBox>
                 <!-- Đăng xuất (Logout) -->
                 <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center"   Margin="10">
@@ -114,15 +134,23 @@
                         <StackPanel Orientation="Horizontal" Background="red" Width="109">
                             <TextBlock Text="" FontSize="16" Margin="0,0,25,0"/>
                             <TextBlock x:Name="btnLogout" Text="Đăng xuất" FontSize="14" Foreground="White" MouseLeftButtonDown="btnLogout_Click"/>
+
                         </StackPanel>
                     </ListBoxItem>
                 </StackPanel>
             </StackPanel>
         </Border>
         <!-- Khu vực nội dung chính -->
-        <Grid Grid.Column="1" Margin="20">
-            <TextBlock Visibility="{Binding TeacherVisibility}" Text="Chào mừng bạn đến với trang quản lý cho giáo viên!" Foreground="Black" FontSize="22" FontWeight="Bold" FontFamily="Segoe UI" VerticalAlignment="Top" Margin="20,0,0,0"/>
-            <TextBlock Visibility="{Binding StuVisibility}" Text="Chào mừng bạn đến với DCMS!" Foreground="Black" FontSize="22" FontWeight="Bold" FontFamily="Segoe UI" VerticalAlignment="Top" Margin="20,0,0,0"/>
+        <Grid Grid.Column="1" Margin="0 0 0 0" x:Name="ContentGrid" Grid.ColumnSpan="2">
+            <!-- background -->
+            <Grid.Background>
+                <ImageBrush x:Name="BackgroundImage" ImageSource="Image/car3.jpg" Stretch="Fill" Opacity="1"/>
+            </Grid.Background>
+            <TextBlock Visibility="{Binding TeacherVisibility}" Text="Chào mừng bạn đến với trang quản lý cho giáo viên!" Foreground="Black" FontSize="22" FontWeight="Bold" FontFamily="Segoe UI" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0"/>
+            <TextBlock Visibility="{Binding StuVisibility}" Text="Chào mừng bạn đến với DCMS!" Foreground="Black" FontSize="22" FontWeight="Bold" FontFamily="Segoe UI" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,40,0,0"/>
+            <Button x:Name="btnChangeBackground" Content="Change" Width="56" Height="22" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="btnChangeBackground_Click"/>
+            <views:Chat x:Name="ChatArea" Visibility="Collapsed"/>
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
         </Grid>
     </Grid>
 </Window>   

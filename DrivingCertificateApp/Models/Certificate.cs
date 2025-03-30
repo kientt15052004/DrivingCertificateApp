@@ -13,7 +13,7 @@ public partial class Certificate
 
     public DateOnly ExpirationDate { get; set; }
 
-    public string? CertificateCode { get; set; }
+    public string CertificateCode { get; set; } = null!;
 
     public virtual User User { get; set; } = null!;
 }

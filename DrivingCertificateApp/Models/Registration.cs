@@ -13,7 +13,7 @@ public partial class Registration
 
     public string? Status { get; set; }
 
-    public string? Comments { get; set; }
+    public string Comments { get; set; } = null!;
 
     public virtual Course Course { get; set; } = null!;
 
